@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  WorldOfPAYBACK
 //
 //  Created by Mohamed Fawzy on 22/04/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MainView()
 }
