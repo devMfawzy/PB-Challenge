@@ -49,8 +49,21 @@
         }
       }
     },
-    "Error view" : {
-
+    "Retry" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederholen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recommencez"
+          }
+        }
+      }
     },
     "Settings" : {
       "localizations" : {

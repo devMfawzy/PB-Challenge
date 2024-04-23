@@ -22,8 +22,10 @@ struct TransactionListView: View {
                 case .idle:
                     Color.clear
                         .onAppear { viewModel.loadTransactions() }
-                case .failure(let error):
-                    Text("Error view")
+                case .failure(let message):
+                    FailureView(message: message) {
+                        viewModel.loadTransactions()
+                    }
                 case .transactions(let transactions):
                     TransactionsHeaderView(
                         value: viewModel.sumOfTransactions,

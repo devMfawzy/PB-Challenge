@@ -27,6 +27,7 @@
 		501EBA362BD745A3000F5928 /* TransactionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA352BD745A3000F5928 /* TransactionCellView.swift */; };
 		501EBA382BD74B95000F5928 /* TransactionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */; };
 		501EBA3A2BD7DF1C000F5928 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA392BD7DF1C000F5928 /* Category.swift */; };
+		501EBA3C2BD7E3CA000F5928 /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA3B2BD7E3CA000F5928 /* FailureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		501EBA352BD745A3000F5928 /* TransactionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellView.swift; sourceTree = "<group>"; };
 		501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHeaderView.swift; sourceTree = "<group>"; };
 		501EBA392BD7DF1C000F5928 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		501EBA3B2BD7E3CA000F5928 /* FailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				501EBA1B2BD723B6000F5928 /* TransactionListView.swift */,
 				501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */,
 				501EBA352BD745A3000F5928 /* TransactionCellView.swift */,
+				501EBA3B2BD7E3CA000F5928 /* FailureView.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				501EB9EE2BD6EFDD000F5928 /* TransactionsService.swift in Sources */,
 				501EB9D72BD6C500000F5928 /* WorldOfPAYBACKApp.swift in Sources */,
 				501EBA2D2BD73C41000F5928 /* SettingsView.swift in Sources */,
+				501EBA3C2BD7E3CA000F5928 /* FailureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
