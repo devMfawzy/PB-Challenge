@@ -21,6 +21,10 @@
 		501EBA2B2BD73BF7000F5928 /* EnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA2A2BD73BF7000F5928 /* EnvironmentView.swift */; };
 		501EBA2D2BD73C41000F5928 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA2C2BD73C41000F5928 /* SettingsView.swift */; };
 		501EBA2F2BD73E16000F5928 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 501EBA2E2BD73E16000F5928 /* Localizable.xcstrings */; };
+		501EBA312BD74385000F5928 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 501EBA302BD74385000F5928 /* PBTransactions.json */; };
+		501EBA322BD74385000F5928 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 501EBA302BD74385000F5928 /* PBTransactions.json */; };
+		501EBA342BD743F7000F5928 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA332BD743F7000F5928 /* TransactionListViewModel.swift */; };
+		501EBA362BD745A3000F5928 /* TransactionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA352BD745A3000F5928 /* TransactionCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,9 @@
 		501EBA2A2BD73BF7000F5928 /* EnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentView.swift; sourceTree = "<group>"; };
 		501EBA2C2BD73C41000F5928 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		501EBA2E2BD73E16000F5928 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		501EBA302BD74385000F5928 /* PBTransactions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = "<group>"; };
+		501EBA332BD743F7000F5928 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		501EBA352BD745A3000F5928 /* TransactionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +160,7 @@
 			children = (
 				501EB9DA2BD6C502000F5928 /* Assets.xcassets */,
 				501EBA2E2BD73E16000F5928 /* Localizable.xcstrings */,
+				501EBA302BD74385000F5928 /* PBTransactions.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				501EBA1B2BD723B6000F5928 /* TransactionListView.swift */,
+				501EBA352BD745A3000F5928 /* TransactionCellView.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				501EBA282BD73BC1000F5928 /* Settings.swift */,
+				501EBA332BD743F7000F5928 /* TransactionListViewModel.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -266,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				501EBA2F2BD73E16000F5928 /* Localizable.xcstrings in Resources */,
+				501EBA312BD74385000F5928 /* PBTransactions.json in Resources */,
 				501EB9DB2BD6C502000F5928 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501EBA322BD74385000F5928 /* PBTransactions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,11 +298,13 @@
 			files = (
 				501EB9D92BD6C500000F5928 /* MainView.swift in Sources */,
 				501EBA1C2BD723B6000F5928 /* TransactionListView.swift in Sources */,
+				501EBA362BD745A3000F5928 /* TransactionCellView.swift in Sources */,
 				501EB9EB2BD6E93B000F5928 /* Date+Format.swift in Sources */,
 				501EBA292BD73BC1000F5928 /* Settings.swift in Sources */,
 				501EBA2B2BD73BF7000F5928 /* EnvironmentView.swift in Sources */,
 				501EB9E82BD6E7BB000F5928 /* TransactionItem.swift in Sources */,
 				501EB9F02BD6F02C000F5928 /* NetworkEnvironment.swift in Sources */,
+				501EBA342BD743F7000F5928 /* TransactionListViewModel.swift in Sources */,
 				501EB9E62BD6E786000F5928 /* TransactionList.swift in Sources */,
 				501EB9EE2BD6EFDD000F5928 /* TransactionsService.swift in Sources */,
 				501EB9D72BD6C500000F5928 /* WorldOfPAYBACKApp.swift in Sources */,
