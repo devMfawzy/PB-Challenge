@@ -16,7 +16,7 @@ struct TransactionListView: View {
     }
     
     @ViewBuilder var transactionsView: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 switch viewModel.loadState {
                 case .idle:
@@ -34,7 +34,10 @@ struct TransactionListView: View {
                         }
                     List {
                         ForEach(transactions) { transaction in
-                            TransactionCellView(transaction: transaction)
+                            let detailsModel = TransactionDetailsModel(transactionItem: transaction)
+                            NavigationLink(destination: TransactionDetailsView(model: detailsModel)) {
+                                TransactionCellView(transaction: transaction)
+                            }
                         }
                         .listRowSeparator(.hidden)
                     }
