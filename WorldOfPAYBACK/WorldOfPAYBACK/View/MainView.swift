@@ -12,12 +12,12 @@ struct MainView: View {
         TabView {
             TransactionListView()
                 .tabItem({
-                    Label("transactions",
+                    Label("Transactions",
                           systemImage: "list.bullet.rectangle.portrait")
                 })
             SettingsView()
                 .tabItem({
-                    Label("settings",
+                    Label("Settings",
                           systemImage: "gear")
                 })
         }

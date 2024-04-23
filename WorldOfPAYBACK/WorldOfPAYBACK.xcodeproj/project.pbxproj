@@ -20,6 +20,7 @@
 		501EBA292BD73BC1000F5928 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA282BD73BC1000F5928 /* Settings.swift */; };
 		501EBA2B2BD73BF7000F5928 /* EnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA2A2BD73BF7000F5928 /* EnvironmentView.swift */; };
 		501EBA2D2BD73C41000F5928 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA2C2BD73C41000F5928 /* SettingsView.swift */; };
+		501EBA2F2BD73E16000F5928 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 501EBA2E2BD73E16000F5928 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		501EBA282BD73BC1000F5928 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		501EBA2A2BD73BF7000F5928 /* EnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentView.swift; sourceTree = "<group>"; };
 		501EBA2C2BD73C41000F5928 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		501EBA2E2BD73E16000F5928 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				501EB9DA2BD6C502000F5928 /* Assets.xcassets */,
+				501EBA2E2BD73E16000F5928 /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -243,6 +246,8 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				fr,
 			);
 			mainGroup = 501EB9CA2BD6C500000F5928;
 			productRefGroup = 501EB9D42BD6C500000F5928 /* Products */;
@@ -260,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501EBA2F2BD73E16000F5928 /* Localizable.xcstrings in Resources */,
 				501EB9DB2BD6C502000F5928 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

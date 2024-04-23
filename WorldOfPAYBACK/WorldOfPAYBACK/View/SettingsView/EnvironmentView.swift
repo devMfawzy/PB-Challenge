@@ -12,7 +12,7 @@ struct EnvironmentView: View {
     
     var body: some View {
         Form {
-            Picker("environment", selection: $settings.networkEnvironment) {
+            Picker("Environment", selection: $settings.networkEnvironment) {
                 ForEach(NetworkEnvironment.allCases) {
                     Text($0.name)
                 }

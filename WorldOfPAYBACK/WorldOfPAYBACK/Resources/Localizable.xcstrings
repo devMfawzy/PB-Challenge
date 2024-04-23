@@ -1,0 +1,70 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Developer tools" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entwicklerwerkzeuge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outils de développement"
+          }
+        }
+      }
+    },
+    "Environment" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umfeld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Environnement"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres"
+          }
+        }
+      }
+    },
+    "Transactions" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transaktionen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transactions"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

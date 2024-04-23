@@ -19,7 +19,7 @@ struct SettingsView: View {
                         HStack {
                             Image(systemName: "hammer.fill")
                                 .controlSize(.large)
-                            Text("deeveloper_tools")
+                            Text("Developer tools")
                             Spacer()
                             Text(settings.networkEnvironment.name)
                                 .foregroundStyle(.secondary)
@@ -30,7 +30,7 @@ struct SettingsView: View {
                 #endif
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("settings")
+            .navigationTitle("Settings")
         }
     }
 }
