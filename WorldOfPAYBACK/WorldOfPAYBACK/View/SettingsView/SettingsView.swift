@@ -8,7 +8,34 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var settings: Settings
+    
     var body: some View {
-        Text("Settings")
+        NavigationView {
+            Form {
+                #if DEBUG
+                Section {
+                    NavigationLink(destination: EnvironmentView()) {
+                        HStack {
+                            Image(systemName: "hammer.fill")
+                                .controlSize(.large)
+                            Text("deeveloper_tools")
+                            Spacer()
+                            Text(settings.networkEnvironment.name)
+                                .foregroundStyle(.secondary)
+                                .font(.subheadline)
+                        }
+                    }
+                }
+                #endif
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("settings")
+        }
     }
+}
+
+#Preview {
+    SettingsView()
+        .environmentObject(Settings())
 }

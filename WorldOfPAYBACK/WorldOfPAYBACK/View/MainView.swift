@@ -21,9 +21,11 @@ struct MainView: View {
                           systemImage: "gear")
                 })
         }
+        .environmentObject(Settings())
     }
 }
 
 #Preview {
     MainView()
+        .environmentObject(Settings())
 }

@@ -17,7 +17,9 @@
 		501EB9F02BD6F02C000F5928 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EB9EF2BD6F02C000F5928 /* NetworkEnvironment.swift */; };
 		501EBA132BD6FB88000F5928 /* TransactionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA122BD6FB88000F5928 /* TransactionsServiceTests.swift */; };
 		501EBA1C2BD723B6000F5928 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA1B2BD723B6000F5928 /* TransactionListView.swift */; };
-		501EBA1E2BD723D3000F5928 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA1D2BD723D3000F5928 /* SettingsView.swift */; };
+		501EBA292BD73BC1000F5928 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA282BD73BC1000F5928 /* Settings.swift */; };
+		501EBA2B2BD73BF7000F5928 /* EnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA2A2BD73BF7000F5928 /* EnvironmentView.swift */; };
+		501EBA2D2BD73C41000F5928 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA2C2BD73C41000F5928 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,9 @@
 		501EBA102BD6FB88000F5928 /* WorldOfPAYBACKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfPAYBACKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		501EBA122BD6FB88000F5928 /* TransactionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsServiceTests.swift; sourceTree = "<group>"; };
 		501EBA1B2BD723B6000F5928 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
-		501EBA1D2BD723D3000F5928 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		501EBA282BD73BC1000F5928 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		501EBA2A2BD73BF7000F5928 /* EnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentView.swift; sourceTree = "<group>"; };
+		501EBA2C2BD73C41000F5928 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				501EB9E42BD6DD71000F5928 /* Model */,
 				501EB9EC2BD6EF9C000F5928 /* Service */,
 				501EBA192BD718D8000F5928 /* View */,
+				501EBA272BD73BA3000F5928 /* Observables */,
 				501EBA1A2BD71B11000F5928 /* Resources */,
 			);
 			path = WorldOfPAYBACK;
@@ -160,9 +165,18 @@
 		501EBA202BD7247B000F5928 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
-				501EBA1D2BD723D3000F5928 /* SettingsView.swift */,
+				501EBA2A2BD73BF7000F5928 /* EnvironmentView.swift */,
+				501EBA2C2BD73C41000F5928 /* SettingsView.swift */,
 			);
 			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		501EBA272BD73BA3000F5928 /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				501EBA282BD73BC1000F5928 /* Settings.swift */,
+			);
+			path = Observables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,12 +281,14 @@
 				501EB9D92BD6C500000F5928 /* MainView.swift in Sources */,
 				501EBA1C2BD723B6000F5928 /* TransactionListView.swift in Sources */,
 				501EB9EB2BD6E93B000F5928 /* Date+Format.swift in Sources */,
-				501EBA1E2BD723D3000F5928 /* SettingsView.swift in Sources */,
+				501EBA292BD73BC1000F5928 /* Settings.swift in Sources */,
+				501EBA2B2BD73BF7000F5928 /* EnvironmentView.swift in Sources */,
 				501EB9E82BD6E7BB000F5928 /* TransactionItem.swift in Sources */,
 				501EB9F02BD6F02C000F5928 /* NetworkEnvironment.swift in Sources */,
 				501EB9E62BD6E786000F5928 /* TransactionList.swift in Sources */,
 				501EB9EE2BD6EFDD000F5928 /* TransactionsService.swift in Sources */,
 				501EB9D72BD6C500000F5928 /* WorldOfPAYBACKApp.swift in Sources */,
+				501EBA2D2BD73C41000F5928 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

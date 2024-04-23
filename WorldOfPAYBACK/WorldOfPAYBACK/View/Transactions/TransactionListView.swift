@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct TransactionListView: View {
+    @EnvironmentObject var settings: Settings
+
     var body: some View {
-        Text("Transactions")
+        VStack {
+            Text("Transactions")
+            Text(settings.networkEnvironment.name)
+        }
     }
 }
 
 #Preview {
     TransactionListView()
+        .environmentObject(Settings())
 }
