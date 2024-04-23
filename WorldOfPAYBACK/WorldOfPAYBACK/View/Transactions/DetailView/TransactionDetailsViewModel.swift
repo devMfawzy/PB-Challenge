@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TransactionDetailsModel {
+struct TransactionDetailsViewModel {
     let partnerDisplayName: String
     let transactionDescription: String?
     

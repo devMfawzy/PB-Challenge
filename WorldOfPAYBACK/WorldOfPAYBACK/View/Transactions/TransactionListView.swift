@@ -34,7 +34,7 @@ struct TransactionListView: View {
                         }
                     List {
                         ForEach(transactions) { transaction in
-                            let detailsModel = TransactionDetailsModel(transactionItem: transaction)
+                            let detailsModel = TransactionDetailsViewModel(transactionItem: transaction)
                             NavigationLink(destination: TransactionDetailsView(model: detailsModel)) {
                                 TransactionCellView(transaction: transaction)
                             }
@@ -43,6 +43,11 @@ struct TransactionListView: View {
                     }
                     .refreshable {
                         viewModel.loadTransactions(showIndicator: false)
+                    }
+                    .toolbar {
+                        ToolbarItem {
+                            toolBarButton
+                        }
                     }
                     .listStyle(.plain)
                 }
@@ -58,6 +63,21 @@ struct TransactionListView: View {
         }
         .onAppear {
             viewModel.update(environment: settings.networkEnvironment)
+        }
+    }
+    
+    private var toolBarButton: some View {
+        Button {
+            viewModel.isFilterViewPresented.toggle()
+        } label: {
+            Image(systemName: "slider.horizontal.3")
+        }
+        .sheet(isPresented: $viewModel.isFilterViewPresented) {
+            FilterView(
+                isPresented: $viewModel.isFilterViewPresented,
+                selectedCategory: viewModel.selectedCategory,
+                categories: viewModel.categories,
+                onSelection: { viewModel.set(selectedCategory: $0) } )
         }
     }
 }

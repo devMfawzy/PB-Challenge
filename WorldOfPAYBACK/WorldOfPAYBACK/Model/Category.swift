@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Category: Equatable {
+struct Category: Equatable, Hashable {
     let id: Int
     var name: String {
         String(id)

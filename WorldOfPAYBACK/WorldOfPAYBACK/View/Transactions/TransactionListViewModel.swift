@@ -39,8 +39,10 @@ final class TransactionListViewModel: ObservableObject {
         return .init(amount: sum, currency: currency)
     }
     
-    var categories: [String] {
-        Set<String>(allTransactions.map( { String($0.category) } )).sorted()
+    var categories: [Category] {
+        let categorieIdsSet = Set<Int>(allTransactions
+            .map { $0.category })
+        return categorieIdsSet.sorted().map { Category(id: $0) }
     }
     
     // MARK: - Methods

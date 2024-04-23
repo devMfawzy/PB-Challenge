@@ -28,8 +28,9 @@
 		501EBA382BD74B95000F5928 /* TransactionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */; };
 		501EBA3A2BD7DF1C000F5928 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA392BD7DF1C000F5928 /* Category.swift */; };
 		501EBA3C2BD7E3CA000F5928 /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA3B2BD7E3CA000F5928 /* FailureView.swift */; };
-		501EBA3E2BD7FDEB000F5928 /* TransactionDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA3D2BD7FDEB000F5928 /* TransactionDetailsModel.swift */; };
+		501EBA3E2BD7FDEB000F5928 /* TransactionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA3D2BD7FDEB000F5928 /* TransactionDetailsViewModel.swift */; };
 		501EBA402BD7FE56000F5928 /* TransactionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA3F2BD7FE56000F5928 /* TransactionDetailsView.swift */; };
+		504141E92BD82D1300E1DDFF /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141E82BD82D1300E1DDFF /* FilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +67,9 @@
 		501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHeaderView.swift; sourceTree = "<group>"; };
 		501EBA392BD7DF1C000F5928 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		501EBA3B2BD7E3CA000F5928 /* FailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureView.swift; sourceTree = "<group>"; };
-		501EBA3D2BD7FDEB000F5928 /* TransactionDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsModel.swift; sourceTree = "<group>"; };
+		501EBA3D2BD7FDEB000F5928 /* TransactionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewModel.swift; sourceTree = "<group>"; };
 		501EBA3F2BD7FE56000F5928 /* TransactionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsView.swift; sourceTree = "<group>"; };
+		504141E82BD82D1300E1DDFF /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +129,6 @@
 				501EB9E52BD6E786000F5928 /* TransactionList.swift */,
 				501EB9E72BD6E7BB000F5928 /* TransactionItem.swift */,
 				501EBA392BD7DF1C000F5928 /* Category.swift */,
-				501EBA3D2BD7FDEB000F5928 /* TransactionDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +164,8 @@
 				501EB9D82BD6C500000F5928 /* MainView.swift */,
 				501EBA1F2BD72467000F5928 /* Transactions */,
 				501EBA202BD7247B000F5928 /* SettingsView */,
+				501EBA432BD81A12000F5928 /* FailureView */,
+				504141E72BD82CEE00E1DDFF /* FilterView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,10 +184,10 @@
 			isa = PBXGroup;
 			children = (
 				501EBA1B2BD723B6000F5928 /* TransactionListView.swift */,
-				501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */,
-				501EBA352BD745A3000F5928 /* TransactionCellView.swift */,
-				501EBA3B2BD7E3CA000F5928 /* FailureView.swift */,
-				501EBA3F2BD7FE56000F5928 /* TransactionDetailsView.swift */,
+				501EBA332BD743F7000F5928 /* TransactionListViewModel.swift */,
+				501EBA422BD81757000F5928 /* CellView */,
+				501EBA412BD816AE000F5928 /* DetailView */,
+				501EBA442BD81A5D000F5928 /* HeaderView */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -202,9 +205,49 @@
 			isa = PBXGroup;
 			children = (
 				501EBA282BD73BC1000F5928 /* Settings.swift */,
-				501EBA332BD743F7000F5928 /* TransactionListViewModel.swift */,
 			);
 			path = Observables;
+			sourceTree = "<group>";
+		};
+		501EBA412BD816AE000F5928 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				501EBA3F2BD7FE56000F5928 /* TransactionDetailsView.swift */,
+				501EBA3D2BD7FDEB000F5928 /* TransactionDetailsViewModel.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		501EBA422BD81757000F5928 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				501EBA352BD745A3000F5928 /* TransactionCellView.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		501EBA432BD81A12000F5928 /* FailureView */ = {
+			isa = PBXGroup;
+			children = (
+				501EBA3B2BD7E3CA000F5928 /* FailureView.swift */,
+			);
+			path = FailureView;
+			sourceTree = "<group>";
+		};
+		501EBA442BD81A5D000F5928 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		504141E72BD82CEE00E1DDFF /* FilterView */ = {
+			isa = PBXGroup;
+			children = (
+				504141E82BD82D1300E1DDFF /* FilterView.swift */,
+			);
+			path = FilterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,7 +359,7 @@
 				501EBA382BD74B95000F5928 /* TransactionsHeaderView.swift in Sources */,
 				501EBA362BD745A3000F5928 /* TransactionCellView.swift in Sources */,
 				501EB9EB2BD6E93B000F5928 /* Date+Format.swift in Sources */,
-				501EBA3E2BD7FDEB000F5928 /* TransactionDetailsModel.swift in Sources */,
+				501EBA3E2BD7FDEB000F5928 /* TransactionDetailsViewModel.swift in Sources */,
 				501EBA292BD73BC1000F5928 /* Settings.swift in Sources */,
 				501EBA2B2BD73BF7000F5928 /* EnvironmentView.swift in Sources */,
 				501EB9E82BD6E7BB000F5928 /* TransactionItem.swift in Sources */,
@@ -327,6 +370,7 @@
 				501EBA3A2BD7DF1C000F5928 /* Category.swift in Sources */,
 				501EB9EE2BD6EFDD000F5928 /* TransactionsService.swift in Sources */,
 				501EB9D72BD6C500000F5928 /* WorldOfPAYBACKApp.swift in Sources */,
+				504141E92BD82D1300E1DDFF /* FilterView.swift in Sources */,
 				501EBA2D2BD73C41000F5928 /* SettingsView.swift in Sources */,
 				501EBA3C2BD7E3CA000F5928 /* FailureView.swift in Sources */,
 			);
