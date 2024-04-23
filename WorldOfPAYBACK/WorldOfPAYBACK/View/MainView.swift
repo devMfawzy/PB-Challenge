@@ -28,4 +28,5 @@ struct MainView: View {
 #Preview {
     MainView()
         .environmentObject(Settings())
+        .environment(\.locale, .init(identifier: "de"))
 }

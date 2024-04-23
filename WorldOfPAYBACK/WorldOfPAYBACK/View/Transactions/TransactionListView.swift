@@ -25,6 +25,11 @@ struct TransactionListView: View {
                 case .failure(let error):
                     Text("Error view")
                 case .transactions(let transactions):
+                    TransactionsHeaderView(
+                        value: viewModel.sumOfTransactions,
+                        category: viewModel.selectedCategory) {
+                            withAnimation { viewModel.set(selectedCategory: nil) }
+                        }
                     List {
                         ForEach(transactions) { transaction in
                             TransactionCellView(transaction: transaction)
@@ -38,7 +43,7 @@ struct TransactionListView: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("transactions")
+            .navigationTitle("Transactions")
             .overlay {
                 if viewModel.isLoading {
                     ProgressView()

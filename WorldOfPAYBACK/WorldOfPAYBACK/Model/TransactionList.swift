@@ -11,8 +11,8 @@ struct TransactionList: Decodable, Equatable {
     var items: [TransactionItem]
 }
 
-extension Array where Element == TransactionItem {
-    func sortByDate() -> [TransactionItem] {
-        sorted(by: { $0.transactionDetail.bookingDate > $1.transactionDetail.bookingDate } )
+extension TransactionList {
+    var sortByDate: [TransactionItem] {
+        items.sorted(by: { $0.transactionDetail.bookingDate > $1.transactionDetail.bookingDate } )
     }
 }

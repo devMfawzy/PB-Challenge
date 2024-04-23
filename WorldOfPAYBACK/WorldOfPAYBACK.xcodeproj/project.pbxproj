@@ -25,6 +25,8 @@
 		501EBA322BD74385000F5928 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 501EBA302BD74385000F5928 /* PBTransactions.json */; };
 		501EBA342BD743F7000F5928 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA332BD743F7000F5928 /* TransactionListViewModel.swift */; };
 		501EBA362BD745A3000F5928 /* TransactionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA352BD745A3000F5928 /* TransactionCellView.swift */; };
+		501EBA382BD74B95000F5928 /* TransactionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */; };
+		501EBA3A2BD7DF1C000F5928 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA392BD7DF1C000F5928 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		501EBA302BD74385000F5928 /* PBTransactions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = "<group>"; };
 		501EBA332BD743F7000F5928 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		501EBA352BD745A3000F5928 /* TransactionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellView.swift; sourceTree = "<group>"; };
+		501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHeaderView.swift; sourceTree = "<group>"; };
+		501EBA392BD7DF1C000F5928 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			children = (
 				501EB9E52BD6E786000F5928 /* TransactionList.swift */,
 				501EB9E72BD6E7BB000F5928 /* TransactionItem.swift */,
+				501EBA392BD7DF1C000F5928 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				501EBA1B2BD723B6000F5928 /* TransactionListView.swift */,
+				501EBA372BD74B95000F5928 /* TransactionsHeaderView.swift */,
 				501EBA352BD745A3000F5928 /* TransactionCellView.swift */,
 			);
 			path = Transactions;
@@ -298,6 +304,7 @@
 			files = (
 				501EB9D92BD6C500000F5928 /* MainView.swift in Sources */,
 				501EBA1C2BD723B6000F5928 /* TransactionListView.swift in Sources */,
+				501EBA382BD74B95000F5928 /* TransactionsHeaderView.swift in Sources */,
 				501EBA362BD745A3000F5928 /* TransactionCellView.swift in Sources */,
 				501EB9EB2BD6E93B000F5928 /* Date+Format.swift in Sources */,
 				501EBA292BD73BC1000F5928 /* Settings.swift in Sources */,
@@ -306,6 +313,7 @@
 				501EB9F02BD6F02C000F5928 /* NetworkEnvironment.swift in Sources */,
 				501EBA342BD743F7000F5928 /* TransactionListViewModel.swift in Sources */,
 				501EB9E62BD6E786000F5928 /* TransactionList.swift in Sources */,
+				501EBA3A2BD7DF1C000F5928 /* Category.swift in Sources */,
 				501EB9EE2BD6EFDD000F5928 /* TransactionsService.swift in Sources */,
 				501EB9D72BD6C500000F5928 /* WorldOfPAYBACKApp.swift in Sources */,
 				501EBA2D2BD73C41000F5928 /* SettingsView.swift in Sources */,

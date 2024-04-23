@@ -23,14 +23,14 @@ final class TransactionListViewModel: ObservableObject {
     }
     
     // MARK: - Properies
-    private(set) var selectedCategory: Int?
-    private var allTransactions = [TransactionItem]()
     private var currentTask: Task<(), Error>?
+    private(set) var selectedCategory: Category?
+    private var allTransactions = [TransactionItem]()
     private var filteredTransactions: [TransactionItem] {
         guard let selectedCategory else {
             return allTransactions
         }
-        return allTransactions.filter { $0.category == selectedCategory }
+        return allTransactions.filter { Category(id: $0.category) == selectedCategory }
     }
     
     var sumOfTransactions: TransactionItem.TransactionDetail.Value {
@@ -39,8 +39,8 @@ final class TransactionListViewModel: ObservableObject {
         return .init(amount: sum, currency: currency)
     }
     
-    var categories: [Int] {
-        Set<Int>(allTransactions.map( { $0.category } )).sorted()
+    var categories: [String] {
+        Set<String>(allTransactions.map( { String($0.category) } )).sorted()
     }
     
     // MARK: - Methods
@@ -52,7 +52,7 @@ final class TransactionListViewModel: ObservableObject {
         }
         currentTask = Task {
             do {
-                let transactions = try await service.getTransactions().items.sortByDate()
+                let transactions = try await service.getTransactions().sortByDate
                 handleSuccess(transactions: transactions)
             } catch let error as TransactionsServiceError {
                 handleError(error)
@@ -67,7 +67,7 @@ final class TransactionListViewModel: ObservableObject {
         }
     }
     
-    func set(selectedCategory category: Int?) {
+    func set(selectedCategory category: Category?) {
         if selectedCategory != category {
             selectedCategory = category
             loadState = .transactions(filteredTransactions)

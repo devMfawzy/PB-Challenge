@@ -1,6 +1,22 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Category:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorie:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catégorie:"
+          }
+        }
+      }
+    },
     "Developer tools" : {
       "localizations" : {
         "de" : {
@@ -33,6 +49,9 @@
         }
       }
     },
+    "Error view" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "de" : {
@@ -45,6 +64,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Paramètres"
+          }
+        }
+      }
+    },
+    "Sum" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Summe"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Somme"
           }
         }
       }
