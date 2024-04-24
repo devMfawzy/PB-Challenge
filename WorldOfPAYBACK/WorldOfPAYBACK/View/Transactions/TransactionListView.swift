@@ -30,7 +30,7 @@ struct TransactionListView: View {
                     TransactionsHeaderView(
                         value: viewModel.sumOfTransactions,
                         category: viewModel.selectedCategory) {
-                            withAnimation { viewModel.set(selectedCategory: nil) }
+                            withAnimation { viewModel.resetTransactionsFilter() }
                         }
                     List {
                         ForEach(transactions) { transaction in
@@ -77,7 +77,13 @@ struct TransactionListView: View {
                 isPresented: $viewModel.isFilterViewPresented,
                 selectedCategory: viewModel.selectedCategory,
                 categories: viewModel.categories,
-                onSelection: { viewModel.set(selectedCategory: $0) } )
+                onSelection: {
+                    if let category = $0 {
+                        viewModel.filterTransactions(by: category)
+                    } else {
+                        viewModel.resetTransactionsFilter()
+                    }
+                } )
         }
     }
 }

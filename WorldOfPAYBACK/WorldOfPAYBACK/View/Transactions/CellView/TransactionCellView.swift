@@ -11,23 +11,23 @@ struct TransactionCellView: View {
     let transaction: TransactionItem
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 16) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(transaction.partnerDisplayName)
-                        .frame(alignment: .leading)
-                    Text(transaction.transactionDetail.description ?? "")
-                        .foregroundColor(.gray)
-                }
-                Text(transaction.transactionDetail.bookingDate.formated)
-                    .lineLimit(0)
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text(transaction.partnerDisplayName)
+                    .font(.title)
+                    .frame(alignment: .leading)
+                Spacer()
+                
             }
-            Spacer()
-            HStack(spacing: 8) {
+            Text(transaction.transactionDetail.description ?? "")
+                .font(.title3)
+                .foregroundColor(.secondary)
+            HStack(alignment: .bottom) {
+                Text(transaction.transactionDetail.bookingDate.formated)
+                    .font(.caption)
+                Spacer()
                 Text(transaction.transactionDetail.value.amount, format: .currency(code: transaction.transactionDetail.value.currency))
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .dynamicTypeSize(.large)
-                    .lineLimit(.zero)
+                    .fontWeight(.semibold)
             }
         }
         .foregroundStyle(.black)

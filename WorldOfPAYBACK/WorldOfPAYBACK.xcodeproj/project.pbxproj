@@ -31,6 +31,8 @@
 		501EBA3E2BD7FDEB000F5928 /* TransactionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA3D2BD7FDEB000F5928 /* TransactionDetailsViewModel.swift */; };
 		501EBA402BD7FE56000F5928 /* TransactionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA3F2BD7FE56000F5928 /* TransactionDetailsView.swift */; };
 		504141E92BD82D1300E1DDFF /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141E82BD82D1300E1DDFF /* FilterView.swift */; };
+		504141EB2BD8497900E1DDFF /* TransactionListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141EA2BD8497900E1DDFF /* TransactionListViewModelTests.swift */; };
+		504141ED2BD849E700E1DDFF /* TransactionsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141EC2BD849E700E1DDFF /* TransactionsServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		501EBA3D2BD7FDEB000F5928 /* TransactionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewModel.swift; sourceTree = "<group>"; };
 		501EBA3F2BD7FE56000F5928 /* TransactionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsView.swift; sourceTree = "<group>"; };
 		504141E82BD82D1300E1DDFF /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		504141EA2BD8497900E1DDFF /* TransactionListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModelTests.swift; sourceTree = "<group>"; };
+		504141EC2BD849E700E1DDFF /* TransactionsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				501EBA122BD6FB88000F5928 /* TransactionsServiceTests.swift */,
+				504141EA2BD8497900E1DDFF /* TransactionListViewModelTests.swift */,
+				504141EC2BD849E700E1DDFF /* TransactionsServiceMock.swift */,
 			);
 			path = WorldOfPAYBACKTests;
 			sourceTree = "<group>";
@@ -381,6 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				501EBA132BD6FB88000F5928 /* TransactionsServiceTests.swift in Sources */,
+				504141ED2BD849E700E1DDFF /* TransactionsServiceMock.swift in Sources */,
+				504141EB2BD8497900E1DDFF /* TransactionListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

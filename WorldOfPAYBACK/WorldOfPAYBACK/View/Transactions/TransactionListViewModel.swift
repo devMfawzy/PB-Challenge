@@ -23,10 +23,10 @@ final class TransactionListViewModel: ObservableObject {
     }
     
     // MARK: - Properies
-    private var currentTask: Task<(), Error>?
+    private(set) var currentTask: Task<(), Error>?
     private(set) var selectedCategory: Category?
-    private var allTransactions = [TransactionItem]()
-    private var filteredTransactions: [TransactionItem] {
+    private(set) var allTransactions = [TransactionItem]()
+    var filteredTransactions: [TransactionItem] {
         guard let selectedCategory else {
             return allTransactions
         }
@@ -69,11 +69,14 @@ final class TransactionListViewModel: ObservableObject {
         }
     }
     
-    func set(selectedCategory category: Category?) {
-        if selectedCategory != category {
-            selectedCategory = category
-            loadState = .transactions(filteredTransactions)
-        }
+    func filterTransactions(by category: Category) {
+        selectedCategory = category
+        loadState = .transactions(filteredTransactions)
+    }
+    
+    func resetTransactionsFilter() {
+        selectedCategory = nil
+        loadState = .transactions(filteredTransactions)
     }
     
     private func handleSuccess(transactions: [TransactionItem]) {
@@ -89,7 +92,7 @@ final class TransactionListViewModel: ObservableObject {
     }
     
     // MARK: - Iner Type
-    enum LoadState {
+    enum LoadState: Equatable {
         case idle
         case failure(String)
         case transactions([TransactionItem])

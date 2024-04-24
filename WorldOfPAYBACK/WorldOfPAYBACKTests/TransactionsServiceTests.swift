@@ -54,24 +54,3 @@ extension XCTestCase {
         }
     }
 }
-
-final class TransactionsServiceMock: TransactionsServiceProtocol {
-    var environment: NetworkEnvironment = .mock
-    var response: Response = .success(transactions: TransactionList(items: []))
-    var expectedData: TransactionList?
-    var expectedError: Error?
-    
-    func getTransactions() async throws -> TransactionList {
-        switch response {
-        case .failure(let error):
-            throw error
-        case .success(let transactions):
-            return transactions
-        }
-    }
-    
-    enum Response {
-        case failure(TransactionsServiceError)
-        case success(transactions: TransactionList)
-    }
-}
