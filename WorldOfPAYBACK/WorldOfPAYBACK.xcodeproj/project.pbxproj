@@ -17,7 +17,7 @@
 		501EB9F02BD6F02C000F5928 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EB9EF2BD6F02C000F5928 /* NetworkEnvironment.swift */; };
 		501EBA132BD6FB88000F5928 /* TransactionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA122BD6FB88000F5928 /* TransactionsServiceTests.swift */; };
 		501EBA1C2BD723B6000F5928 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA1B2BD723B6000F5928 /* TransactionListView.swift */; };
-		501EBA292BD73BC1000F5928 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA282BD73BC1000F5928 /* Settings.swift */; };
+		501EBA292BD73BC1000F5928 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA282BD73BC1000F5928 /* UserSettings.swift */; };
 		501EBA2B2BD73BF7000F5928 /* EnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA2A2BD73BF7000F5928 /* EnvironmentView.swift */; };
 		501EBA2D2BD73C41000F5928 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EBA2C2BD73C41000F5928 /* SettingsView.swift */; };
 		501EBA2F2BD73E16000F5928 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 501EBA2E2BD73E16000F5928 /* Localizable.xcstrings */; };
@@ -33,6 +33,9 @@
 		504141E92BD82D1300E1DDFF /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141E82BD82D1300E1DDFF /* FilterView.swift */; };
 		504141EB2BD8497900E1DDFF /* TransactionListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141EA2BD8497900E1DDFF /* TransactionListViewModelTests.swift */; };
 		504141ED2BD849E700E1DDFF /* TransactionsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141EC2BD849E700E1DDFF /* TransactionsServiceMock.swift */; };
+		504141EF2BD926B600E1DDFF /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141EE2BD926B600E1DDFF /* NetworkMonitor.swift */; };
+		504141F12BD9E5D300E1DDFF /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141F02BD9E5D300E1DDFF /* UserDefault.swift */; };
+		504141F42BDAA3CD00E1DDFF /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141F32BDAA3CD00E1DDFF /* ConnectionErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +62,7 @@
 		501EBA102BD6FB88000F5928 /* WorldOfPAYBACKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfPAYBACKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		501EBA122BD6FB88000F5928 /* TransactionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsServiceTests.swift; sourceTree = "<group>"; };
 		501EBA1B2BD723B6000F5928 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
-		501EBA282BD73BC1000F5928 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		501EBA282BD73BC1000F5928 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		501EBA2A2BD73BF7000F5928 /* EnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentView.swift; sourceTree = "<group>"; };
 		501EBA2C2BD73C41000F5928 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		501EBA2E2BD73E16000F5928 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -74,6 +77,9 @@
 		504141E82BD82D1300E1DDFF /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		504141EA2BD8497900E1DDFF /* TransactionListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModelTests.swift; sourceTree = "<group>"; };
 		504141EC2BD849E700E1DDFF /* TransactionsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsServiceMock.swift; sourceTree = "<group>"; };
+		504141EE2BD926B600E1DDFF /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		504141F02BD9E5D300E1DDFF /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		504141F32BDAA3CD00E1DDFF /* ConnectionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +127,7 @@
 				501EB9E42BD6DD71000F5928 /* Model */,
 				501EB9EC2BD6EF9C000F5928 /* Service */,
 				501EBA192BD718D8000F5928 /* View */,
-				501EBA272BD73BA3000F5928 /* Observables */,
+				501EBA272BD73BA3000F5928 /* Utils */,
 				501EBA1A2BD71B11000F5928 /* Resources */,
 			);
 			path = WorldOfPAYBACK;
@@ -171,6 +177,7 @@
 				501EBA1F2BD72467000F5928 /* Transactions */,
 				501EBA202BD7247B000F5928 /* SettingsView */,
 				501EBA432BD81A12000F5928 /* FailureView */,
+				504141F22BDAA3A800E1DDFF /* ConnectionErrorView */,
 				504141E72BD82CEE00E1DDFF /* FilterView */,
 			);
 			path = View;
@@ -207,12 +214,14 @@
 			path = SettingsView;
 			sourceTree = "<group>";
 		};
-		501EBA272BD73BA3000F5928 /* Observables */ = {
+		501EBA272BD73BA3000F5928 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				501EBA282BD73BC1000F5928 /* Settings.swift */,
+				501EBA282BD73BC1000F5928 /* UserSettings.swift */,
+				504141EE2BD926B600E1DDFF /* NetworkMonitor.swift */,
+				504141F02BD9E5D300E1DDFF /* UserDefault.swift */,
 			);
-			path = Observables;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		501EBA412BD816AE000F5928 /* DetailView */ = {
@@ -254,6 +263,14 @@
 				504141E82BD82D1300E1DDFF /* FilterView.swift */,
 			);
 			path = FilterView;
+			sourceTree = "<group>";
+		};
+		504141F22BDAA3A800E1DDFF /* ConnectionErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				504141F32BDAA3CD00E1DDFF /* ConnectionErrorView.swift */,
+			);
+			path = ConnectionErrorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,10 +383,12 @@
 				501EBA362BD745A3000F5928 /* TransactionCellView.swift in Sources */,
 				501EB9EB2BD6E93B000F5928 /* Date+Format.swift in Sources */,
 				501EBA3E2BD7FDEB000F5928 /* TransactionDetailsViewModel.swift in Sources */,
-				501EBA292BD73BC1000F5928 /* Settings.swift in Sources */,
+				501EBA292BD73BC1000F5928 /* UserSettings.swift in Sources */,
 				501EBA2B2BD73BF7000F5928 /* EnvironmentView.swift in Sources */,
+				504141F12BD9E5D300E1DDFF /* UserDefault.swift in Sources */,
 				501EB9E82BD6E7BB000F5928 /* TransactionItem.swift in Sources */,
 				501EB9F02BD6F02C000F5928 /* NetworkEnvironment.swift in Sources */,
+				504141F42BDAA3CD00E1DDFF /* ConnectionErrorView.swift in Sources */,
 				501EBA342BD743F7000F5928 /* TransactionListViewModel.swift in Sources */,
 				501EB9E62BD6E786000F5928 /* TransactionList.swift in Sources */,
 				501EBA402BD7FE56000F5928 /* TransactionDetailsView.swift in Sources */,
@@ -377,6 +396,7 @@
 				501EB9EE2BD6EFDD000F5928 /* TransactionsService.swift in Sources */,
 				501EB9D72BD6C500000F5928 /* WorldOfPAYBACKApp.swift in Sources */,
 				504141E92BD82D1300E1DDFF /* FilterView.swift in Sources */,
+				504141EF2BD926B600E1DDFF /* NetworkMonitor.swift in Sources */,
 				501EBA2D2BD73C41000F5928 /* SettingsView.swift in Sources */,
 				501EBA3C2BD7E3CA000F5928 /* FailureView.swift in Sources */,
 			);

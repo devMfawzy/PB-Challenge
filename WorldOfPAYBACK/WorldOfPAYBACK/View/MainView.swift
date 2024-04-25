@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct MainView: View {
-    var settings = UserSettings()
-
+    let settings = UserSettings()
+    let networkMonitor = NetworkMonitor()
+    
     var body: some View {
+        VStack(spacing: 0) {
+            if !networkMonitor.isConnected {
+                ConnectionErrorView(title: "No Internet Connection")
+                    .transition(.move(edge: .top))
+            }
+            tabView
+        }
+        .animation(.easeOut, value: networkMonitor.isConnected)
+    }
+    
+    // MARK: - Tab view
+    private var tabView: some View {
         let transactionListViewModel = TransactionListViewModel(settings: settings)
-        TabView {
+        return TabView {
             TransactionListView(viewModel: transactionListViewModel)
                 .tabItem({
                     Label("Transactions",
@@ -30,6 +43,6 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(settings: UserSettings())
+    MainView()
         .environment(\.locale, .init(identifier: "de"))
 }
