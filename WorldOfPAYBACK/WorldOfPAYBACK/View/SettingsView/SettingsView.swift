@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var settings: Settings
+    @Environment(UserSettings.self) var settings: UserSettings
     
     var body: some View {
+        @Bindable var settings = settings
         NavigationView {
             Form {
+                Section("Appearance"){
+                    Toggle("Dark", isOn: $settings.darkMode)
+                }
+                
                 #if DEBUG
                 Section {
                     NavigationLink(destination: EnvironmentView()) {
@@ -36,6 +41,6 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
-        .environmentObject(Settings())
+    return SettingsView()
+        .environment(UserSettings())
 }

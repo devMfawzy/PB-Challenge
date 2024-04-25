@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct TransactionListView: View {
-    @EnvironmentObject var settings: Settings
-    @StateObject var viewModel = TransactionListViewModel()
+    @State var viewModel: TransactionListViewModel
     
     public var body: some View {
         transactionsView
@@ -62,7 +61,7 @@ struct TransactionListView: View {
             }
         }
         .onAppear {
-            viewModel.update(environment: settings.networkEnvironment)
+            viewModel.reloadTransactionsOnNetworkChange()
         }
     }
     
@@ -90,5 +89,4 @@ struct TransactionListView: View {
 
 #Preview {
     TransactionListView(viewModel: TransactionListViewModel())
-        .environmentObject(Settings())
 }

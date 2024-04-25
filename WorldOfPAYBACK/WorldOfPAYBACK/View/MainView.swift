@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct MainView: View {
+    var settings = UserSettings()
+
     var body: some View {
+        let transactionListViewModel = TransactionListViewModel(settings: settings)
         TabView {
-            TransactionListView()
+            TransactionListView(viewModel: transactionListViewModel)
                 .tabItem({
                     Label("Transactions",
                           systemImage: "list.bullet.rectangle.portrait")
@@ -20,13 +23,13 @@ struct MainView: View {
                     Label("Settings",
                           systemImage: "gear")
                 })
+                .environment(settings)
         }
-        .environmentObject(Settings())
+        .preferredColorScheme(settings.darkMode ? .dark : .light)
     }
 }
 
 #Preview {
-    MainView()
-        .environmentObject(Settings())
+    MainView(settings: UserSettings())
         .environment(\.locale, .init(identifier: "de"))
 }

@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct EnvironmentView: View {
-    @EnvironmentObject var settings: Settings
+    @Environment(UserSettings.self) var settings: UserSettings
     
     var body: some View {
+        @Bindable var settings = settings
         Form {
             Picker("Environment", selection: $settings.networkEnvironment) {
                 ForEach(NetworkEnvironment.allCases) {
@@ -25,5 +26,5 @@ struct EnvironmentView: View {
 
 #Preview {
     EnvironmentView()
-        .environmentObject(Settings())
+        .environment(UserSettings())
 }

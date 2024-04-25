@@ -7,19 +7,22 @@
 
 import Foundation
 
-@MainActor
-final class TransactionListViewModel: ObservableObject {
+@Observable
+final class TransactionListViewModel {
     // MARK: - Dependencies
     private(set) var service: TransactionsServiceProtocol
+    private(set) var settings: UserSettings
     
     // MARK: - Publishers
-    @Published private(set) var loadState = LoadState.idle
-    @Published private(set) var isLoading = false
-    @Published var isFilterViewPresented = false
+    private(set) var loadState = LoadState.idle
+    private(set) var isLoading = false
+    var isFilterViewPresented = false
     
     // MARK: - Init
-    init(service: TransactionsServiceProtocol = TransactionsService()) {
+    init(service: TransactionsServiceProtocol = TransactionsService(),
+         settings: UserSettings = UserSettings()) {
         self.service = service
+        self.settings = settings
     }
     
     // MARK: - Properies
@@ -54,17 +57,17 @@ final class TransactionListViewModel: ObservableObject {
         }
         currentTask = Task {
             do {
-                let transactions = try await service.getTransactions().sortByDate
-                handleSuccess(transactions: transactions)
+                let transactions = try await service.getTransactions().sortedByDate
+                await handleSuccess(transactions: transactions)
             } catch let error as TransactionsServiceError {
-                handleError(error)
+                await handleError(error)
             }
         }
     }
     
-    func update(environment: NetworkEnvironment) {
-        if environment != service.environment {
-            service.environment = environment
+    func reloadTransactionsOnNetworkChange() {
+        if settings.networkEnvironment != service.environment {
+            service.environment = settings.networkEnvironment
             loadTransactions()
         }
     }
@@ -79,6 +82,7 @@ final class TransactionListViewModel: ObservableObject {
         loadState = .transactions(filteredTransactions)
     }
     
+    @MainActor
     private func handleSuccess(transactions: [TransactionItem]) {
         isLoading = false
         selectedCategory = nil
@@ -86,6 +90,7 @@ final class TransactionListViewModel: ObservableObject {
         loadState = .transactions(transactions)
     }
     
+    @MainActor
     private func handleError(_ error: Error) {
         isLoading = false
         loadState = .failure(error.localizedDescription)
