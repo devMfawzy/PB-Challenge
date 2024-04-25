@@ -17,7 +17,7 @@ final class TransactionsServiceMock: TransactionsServiceProtocol {
     
     func getTransactions() async throws -> TransactionList {
         if let seconds = responInSecond {
-            try await Task.sleep(nanoseconds: UInt64(1e+9) * seconds)
+            try await Task.sleep(for: .seconds(seconds))
         }
         switch response {
         case .failure(let error):

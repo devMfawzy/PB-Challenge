@@ -11,16 +11,19 @@ import XCTest
 final class TransactionListViewModelTests: XCTestCase {
     var sut: TransactionListViewModel!
     var service: TransactionsServiceMock!
+    var settings: UserSettings!
     
     @MainActor
     override func setUpWithError() throws {
         service = TransactionsServiceMock()
-        sut = TransactionListViewModel(service:  service)
+        settings = UserSettings()
+        sut = TransactionListViewModel(service:  service, settings: settings)
     }
 
     override func tearDownWithError() throws {
         sut = nil
         service = nil
+        settings = nil
         try super.tearDownWithError()
     }
 
@@ -72,9 +75,10 @@ final class TransactionListViewModelTests: XCTestCase {
         NetworkEnvironment.allCases.forEach {
             // Given
             let env = $0
+            settings.networkEnvironment = $0
             
             // When
-            sut.update(environment: env)
+            sut.reloadTransactionsOnNetworkChange()
             
             // Then
             XCTAssertEqual(service.environment, env)
