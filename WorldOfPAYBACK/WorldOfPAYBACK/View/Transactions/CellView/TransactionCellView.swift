@@ -12,13 +12,9 @@ struct TransactionCellView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            HStack {
-                Text(transaction.partnerDisplayName)
-                    .font(.title)
-                    .frame(alignment: .leading)
-                Spacer()
-                
-            }
+            Text(transaction.partnerDisplayName)
+                .font(.title)
+                .frame(alignment: .leading)
             Text(transaction.transactionDetail.description ?? "")
                 .font(.title3)
                 .foregroundColor(.secondary)
@@ -30,11 +26,11 @@ struct TransactionCellView: View {
                     .fontWeight(.semibold)
             }
         }
-        .foregroundStyle(.black)
+        .foregroundStyle(.primary)
         .padding()
-        .background(Color.white)
+        .background(.background)
         .cornerRadius(10)
-        .shadow(color: Color.gray.opacity(0.2), radius: 6, x: 0, y: 4)
+        .shadow(color: .primary, radius: 6, x: 0, y: 4)
     }
 }
 
