@@ -37,7 +37,8 @@ struct TransactionsHeaderView: View {
         .padding(10)
         .overlay(
             RoundedRectangle(cornerRadius: 6)
-                .stroke(.gray.opacity(0.2), lineWidth: 1)
+                .stroke(.primary.opacity(0.2), lineWidth: 2)
+                .shadow(color: .primary, radius: 2, x: 0, y: 0)
         )
         .padding(.horizontal, 20)
     }
