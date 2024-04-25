@@ -12,7 +12,7 @@ struct TransactionList: Decodable, Equatable {
 }
 
 extension TransactionList {
-    var sortByDate: [TransactionItem] {
+    var sortedByDate: [TransactionItem] {
         items.sorted(by: { $0.transactionDetail.bookingDate > $1.transactionDetail.bookingDate } )
     }
 }
