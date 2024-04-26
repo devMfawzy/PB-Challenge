@@ -11,58 +11,61 @@ struct TransactionListView: View {
     @State var viewModel: TransactionListViewModel
     
     public var body: some View {
-        transactionsView
-    }
-    
-    @ViewBuilder var transactionsView: some View {
         NavigationStack {
-            VStack {
-                switch viewModel.loadState {
-                case .idle:
-                    Color.clear
-                        .onAppear { viewModel.loadTransactions() }
-                case .failure(let message):
-                    FailureView(message: message) {
-                        viewModel.loadTransactions()
-                    }
-                case .transactions(let transactions):
-                    TransactionsHeaderView(
-                        value: viewModel.sumOfTransactions,
-                        category: viewModel.selectedCategory) {
-                            withAnimation { viewModel.resetTransactionsFilter() }
-                        }
-                    List {
-                        ForEach(transactions) { transaction in
-                            let detailsModel = TransactionDetailsViewModel(transactionItem: transaction)
-                            NavigationLink(destination: TransactionDetailsView(model: detailsModel)) {
-                                TransactionCellView(transaction: transaction)
-                            }
-                        }
-                        .listRowSeparator(.hidden)
-                    }
-                    .refreshable {
-                        viewModel.loadTransactions(showIndicator: false)
-                    }
-                    .toolbar {
-                        ToolbarItem {
-                            toolBarButton
-                        }
-                    }
-                    .listStyle(.plain)
+            switch viewModel.loadState {
+            case .idle:
+                Color.clear
+                    .onAppear { viewModel.loadTransactions() }
+            case .failure(let message):
+                FailureView(message: message) {
+                    viewModel.loadTransactions()
                 }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Transactions")
-            .overlay {
-                if viewModel.isLoading {
-                    ProgressView()
-                        .controlSize(.large)
+            case .transactions(let transactions):
+                ScrollView {
+                    LazyVStack(pinnedViews:[.sectionHeaders]) {
+                        Section {
+                            transactionsList(transactions)
+                        } header: {
+                            TransactionsHeaderView(
+                                value: viewModel.sumOfTransactions,
+                                category: viewModel.selectedCategory) {
+                                    withAnimation { viewModel.resetTransactionsFilter() }
+                                }
+                        }
+                    }
+                }
+                .navigationTitle("Transactions")
+                .refreshable {
+                    viewModel.loadTransactions(showIndicator: false)
+                }
+                .toolbar {
+                    ToolbarItem {
+                        toolBarButton
+                    }
+                }
+                .overlay {
+                    if viewModel.isLoading {
+                        ProgressView()
+                            .controlSize(.large)
+                    }
                 }
             }
         }
         .onAppear {
             viewModel.reloadTransactionsOnNetworkChange()
         }
+    }
+    
+    private func transactionsList(_ transactions: [TransactionItem]) -> some View {
+        ForEach(transactions) { transaction in
+            let detailsModel = TransactionDetailsViewModel(transactionItem: transaction)
+            NavigationLink(destination: TransactionDetailsView(model: detailsModel)) {
+                TransactionCellView(transaction: transaction)
+                    .padding(.bottom, 10)
+            }
+            .buttonStyle(PlainButtonStyle())
+        }
+        .padding(.horizontal)
     }
     
     private var toolBarButton: some View {

@@ -10,10 +10,8 @@ import Network
 
 @Observable
 final class NetworkMonitor {
-    @ObservationIgnored
-    private let monitor = NWPathMonitor()
-    @ObservationIgnored
-    private let queue = DispatchQueue(label: "NetworkMonitor.Queue")
+    @ObservationIgnored private let monitor = NWPathMonitor()
+    @ObservationIgnored private let queue = DispatchQueue(label: "NetworkMonitor.Queue")
 
     private(set) var isConnected = true
 

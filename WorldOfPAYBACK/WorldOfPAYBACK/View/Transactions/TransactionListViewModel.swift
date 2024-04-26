@@ -10,10 +10,10 @@ import Foundation
 @Observable
 final class TransactionListViewModel {
     // MARK: - Dependencies
-    private(set) var service: TransactionsServiceProtocol
-    private(set) var settings: UserSettings
+    @ObservationIgnored private(set) var service: TransactionsServiceProtocol
+    @ObservationIgnored private(set) var settings: UserSettings
     
-    // MARK: - Publishers
+    // MARK: - Observation tracked
     private(set) var loadState = LoadState.idle
     private(set) var isLoading = false
     var isFilterViewPresented = false
@@ -26,9 +26,9 @@ final class TransactionListViewModel {
     }
     
     // MARK: - Properies
-    private(set) var currentTask: Task<(), Error>?
-    private(set) var selectedCategory: Category?
-    private(set) var allTransactions = [TransactionItem]()
+    @ObservationIgnored private(set) var currentTask: Task<(), Error>?
+    @ObservationIgnored private(set) var selectedCategory: Category?
+    @ObservationIgnored private(set) var allTransactions = [TransactionItem]()
     var filteredTransactions: [TransactionItem] {
         guard let selectedCategory else {
             return allTransactions

@@ -29,18 +29,19 @@ struct TransactionsHeaderView: View {
                     Text(category.name)
                         .font(.body)
                     Spacer()
-                    Button(action: onResetFilterTapped)
-                    { Image(systemName: "x.circle") }
+                    Button(action: onResetFilterTapped) {
+                        Image(systemName: "x.circle.fill").tint(.gray)
+                    }
                 }
             }
         }
-        .padding(10)
+        .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 6)
-                .stroke(.primary.opacity(0.2), lineWidth: 2)
-                .shadow(color: .primary, radius: 2, x: 0, y: 0)
+                .stroke(.primary)
         )
-        .padding(.horizontal, 20)
+        .padding(10)
+        .background(.background.opacity(0.98))
     }
 }
 
