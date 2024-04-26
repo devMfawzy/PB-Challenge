@@ -43,12 +43,12 @@ struct TransactionListView: View {
                         toolBarButton
                     }
                 }
-                .overlay {
-                    if viewModel.isLoading {
-                        ProgressView()
-                            .controlSize(.large)
-                    }
-                }
+            }
+        }
+        .overlay {
+            if viewModel.isLoading {
+                ProgressView()
+                    .controlSize(.large)
             }
         }
         .onAppear {
