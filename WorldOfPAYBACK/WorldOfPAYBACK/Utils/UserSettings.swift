@@ -7,8 +7,13 @@
 
 import Foundation
 
+protocol UserSettingsProtocol {
+    var networkEnvironment: NetworkEnvironment { get }
+    var darkMode: Bool { get }
+}
+
 @Observable
-class UserSettings {
+class UserSettings: UserSettingsProtocol {
     var networkEnvironment = NetworkEnvironment(rawValue: UserDefaults.networkEnvironment) ?? .mock {
         didSet {
             UserDefaults.networkEnvironment = networkEnvironment.rawValue

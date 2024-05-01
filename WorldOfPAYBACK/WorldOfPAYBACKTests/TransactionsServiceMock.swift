@@ -46,8 +46,8 @@ extension TransactionsServiceMock {
         randomTansactionsWith(numbers: months)
     }
     
-    static func randomTansactions(counr: Int) -> [TransactionItem] {
-        randomTansactionsWith(numbers: Array(1...counr))
+    static func randomTansactions(count: Int) -> [TransactionItem] {
+        randomTansactionsWith(numbers: Array(1...count))
     }
     
     private static func randomTansactionsWith(numbers: [Int]) -> [TransactionItem] {

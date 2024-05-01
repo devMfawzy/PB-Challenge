@@ -12,47 +12,45 @@ struct TransactionListView: View {
     
     public var body: some View {
         NavigationStack {
-            switch viewModel.loadState {
-            case .idle:
-                Color.clear
-                    .onAppear { viewModel.loadTransactions() }
-            case .failure(let message):
-                FailureView(message: message) {
-                    viewModel.loadTransactions()
-                }
-            case .transactions(let transactions):
-                ScrollView {
-                    LazyVStack(pinnedViews:[.sectionHeaders]) {
-                        Section {
-                            transactionsList(transactions)
-                        } header: {
+            ScrollView {
+                LazyVStack(pinnedViews:[.sectionHeaders]) {
+                    Section {
+                        transactionsList(viewModel.transactions)
+                    } header: {
+                        viewModel.transactions.ifNotEmpty {
                             TransactionsHeaderView(
                                 value: viewModel.sumOfTransactions,
                                 category: viewModel.selectedCategory) {
-                                    withAnimation { viewModel.resetTransactionsFilter() }
+                                    withAnimation {
+                                        viewModel.dispatchAction(action: .didResetTransactionsFilter)
+                                    }
                                 }
                         }
                     }
                 }
-                .navigationTitle("Transactions")
-                .refreshable {
-                    viewModel.loadTransactions(showIndicator: false)
-                }
-                .toolbar {
-                    ToolbarItem {
-                        toolBarButton
-                    }
+            }
+            .navigationTitle("Transactions")
+            .refreshable {
+                viewModel.dispatchAction(action: .didPullToRefresh)
+            }
+            .toolbar {
+                if viewModel.shouldShowFliterView {
+                    toolBarButton
                 }
             }
-        }
-        .overlay {
-            if viewModel.isLoading {
-                ProgressView()
-                    .controlSize(.large)
+            .overlay {
+                if let message =  viewModel.failureMessage {
+                    FailureView(message: message) {
+                        viewModel.dispatchAction(action: .didTapRetry)
+                    }
+                } else if viewModel.isLoading {
+                    ProgressView()
+                        .controlSize(.large)
+                }
             }
         }
         .onAppear {
-            viewModel.reloadTransactionsOnNetworkChange()
+            viewModel.dispatchAction(action: .viewWillAppear)
         }
     }
     
@@ -70,22 +68,24 @@ struct TransactionListView: View {
     
     private var toolBarButton: some View {
         Button {
-            viewModel.isFilterViewPresented.toggle()
+            viewModel.dispatchAction(action: .showFilterView)
         } label: {
             Image(systemName: "slider.horizontal.3")
         }
         .sheet(isPresented: $viewModel.isFilterViewPresented) {
             FilterView(
-                isPresented: $viewModel.isFilterViewPresented,
                 selectedCategory: viewModel.selectedCategory,
                 categories: viewModel.categories,
-                onSelection: {
-                    if let category = $0 {
-                        viewModel.filterTransactions(by: category)
-                    } else {
-                        viewModel.resetTransactionsFilter()
-                    }
-                } )
+                onSelection: { viewModel.dispatchAction(action: .didSelectCategory(category: $0)) }
+            )
+        }
+    }
+}
+
+extension Collection {
+    @ViewBuilder func ifNotEmpty(_ closure: () -> some View) -> some View {
+        if !isEmpty {
+            closure()
         }
     }
 }

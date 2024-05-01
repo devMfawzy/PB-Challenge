@@ -36,6 +36,7 @@
 		504141EF2BD926B600E1DDFF /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141EE2BD926B600E1DDFF /* NetworkMonitor.swift */; };
 		504141F12BD9E5D300E1DDFF /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141F02BD9E5D300E1DDFF /* UserDefault.swift */; };
 		504141F42BDAA3CD00E1DDFF /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141F32BDAA3CD00E1DDFF /* ConnectionErrorView.swift */; };
+		50E23CC02BE29A8600E7011D /* UserSettingsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E23CBF2BE29A8600E7011D /* UserSettingsMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		504141EE2BD926B600E1DDFF /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		504141F02BD9E5D300E1DDFF /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		504141F32BDAA3CD00E1DDFF /* ConnectionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
+		50E23CBF2BE29A8600E7011D /* UserSettingsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				501EBA122BD6FB88000F5928 /* TransactionsServiceTests.swift */,
 				504141EA2BD8497900E1DDFF /* TransactionListViewModelTests.swift */,
 				504141EC2BD849E700E1DDFF /* TransactionsServiceMock.swift */,
+				50E23CBF2BE29A8600E7011D /* UserSettingsMock.swift */,
 			);
 			path = WorldOfPAYBACKTests;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				501EBA132BD6FB88000F5928 /* TransactionsServiceTests.swift in Sources */,
 				504141ED2BD849E700E1DDFF /* TransactionsServiceMock.swift in Sources */,
 				504141EB2BD8497900E1DDFF /* TransactionListViewModelTests.swift in Sources */,
+				50E23CC02BE29A8600E7011D /* UserSettingsMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
