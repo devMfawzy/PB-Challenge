@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FilterView: View {
-    // MARK: - Binding
-    @Binding var isPresented: Bool
+    // MARK: - Environment
+    @Environment(\.dismiss) var dismissAction
 
     // MARK: - States
     @State var selectedCategory: Category?
@@ -30,8 +30,9 @@ struct FilterView: View {
             
             if selectedCategory != nil {
                 Section {
-                    Button("Apply") { onSelection(selectedCategory)
-                        isPresented.toggle()
+                    Button("Apply") {
+                        onSelection(selectedCategory)
+                        dismissAction.callAsFunction()
                     }
                 }
             }
@@ -40,7 +41,7 @@ struct FilterView: View {
                 Button("Clear", role: .destructive) {
                     selectedCategory = nil
                     onSelection(selectedCategory)
-                    isPresented.toggle()
+                    dismissAction.callAsFunction()
                 }
             }
         }
@@ -48,8 +49,7 @@ struct FilterView: View {
 }
 
 #Preview {
-    FilterView(isPresented: .constant(false),
-               selectedCategory: nil,
+    FilterView(selectedCategory: nil,
                categories: [
                 Category(id: 1),
                 Category(id: 2),
