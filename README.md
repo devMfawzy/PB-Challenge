@@ -24,8 +24,11 @@ The app shows a global **"No-Internet-Connection"** view whenever the device bec
 ## App Architecture
 The app follows the `MVVM` Architecture and uses the new `iOS 17.0+` @Observable macro.
 
+## Dependencies
+The app operates independently, free from external dependencies.
+
 ## Testing
-Added units tests that cover `TransactionList View/ViewModel` and `Transactions Sevice`
+The app operates independently, free from external dependencies.
 
 ## Localization
 Using Xcode localizable string catalog for localization.
