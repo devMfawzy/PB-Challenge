@@ -38,13 +38,16 @@ extension TransactionsServiceMock {
         responInSecond = seconds
     }
     
-    
     static func randomTansactionsWith(categories: [Int]) -> [TransactionItem] {
         randomTansactionsWith(numbers: categories)
     }
     
     static func randomTansactionsIn(months: [Int]) -> [TransactionItem] {
         randomTansactionsWith(numbers: months)
+    }
+    
+    static func randomTansactions(counr: Int) -> [TransactionItem] {
+        randomTansactionsWith(numbers: Array(1...counr))
     }
     
     private static func randomTansactionsWith(numbers: [Int]) -> [TransactionItem] {
