@@ -99,7 +99,6 @@ final class TransactionListViewModel {
     }
     
     // MARK: - Iner Type
-    
     enum Action {
         case viewWillAppear
         case showFilterView

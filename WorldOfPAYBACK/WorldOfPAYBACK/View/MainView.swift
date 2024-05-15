@@ -24,9 +24,8 @@ struct MainView: View {
     
     // MARK: - Tab view
     private var tabView: some View {
-        let transactionListViewModel = TransactionListViewModel(settings: settings)
-        return TabView {
-            TransactionListView(viewModel: transactionListViewModel)
+        TabView {
+            TransactionListView(viewModel: TransactionListViewModel(settings: settings))
                 .tabItem({
                     Label("Transactions",
                           systemImage: "list.bullet.rectangle.portrait")

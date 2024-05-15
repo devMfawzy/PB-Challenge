@@ -12,14 +12,11 @@ struct FailureView: View {
     var onRetry: () -> Void
     
     var body: some View {
-        VStack {
+        VStack(spacing: 30) {
             Text(message)
                 .font(.headline)
-            Button(action: onRetry) {
-                Text("Retry")
-                    .padding()
-                    .cornerRadius(10)
-            }
+            Button("Retry", action: onRetry)
+                .buttonStyle(RoundedButtonStyle())
         }
         .padding()
     }

@@ -21,17 +21,23 @@ struct UserDefault<Value> {
             container.set(newValue, forKey: key.rawValue)
         }
     }
+    
+    init(wrappedValue: Value, key: UserDefaultKey, container: UserDefaults = .standard) {
+        self.defaultValue = wrappedValue
+        self.key = key
+        self.container = container
+    }
 }
 
 extension UserDefaults {
-    @UserDefault(key: .networkEnvironment, defaultValue: NetworkEnvironment.mock.rawValue)
-    static var networkEnvironment: String
+    @UserDefault(key: .networkEnvironment)
+    static var networkEnvironment = NetworkEnvironment.mock.rawValue
     
-    @UserDefault(key: .darkMode, defaultValue: false)
-    static var darkMode: Bool
+    @UserDefault(key: .darkMode)
+    static var darkMode = false
 }
 
-enum UserDefaultKey: String, Codable {
+enum UserDefaultKey: String {
     case networkEnvironment = "UserDefaultKey.NetworkEnvironment"
     case darkMode = "UserDefaultKey.DarkMode"
 }

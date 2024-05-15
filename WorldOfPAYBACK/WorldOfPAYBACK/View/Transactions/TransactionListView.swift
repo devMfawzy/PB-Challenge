@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct TransactionListView: View {
-    @State var viewModel: TransactionListViewModel
+    @State private var viewModel: TransactionListViewModel
+    
+    init(viewModel: TransactionListViewModel) {
+        self.viewModel = viewModel
+    }
     
     public var body: some View {
         NavigationStack {

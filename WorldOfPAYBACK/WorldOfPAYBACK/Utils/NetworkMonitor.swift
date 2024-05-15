@@ -16,11 +16,15 @@ final class NetworkMonitor {
     private(set) var isConnected = true
 
     init() {
-        monitor.pathUpdateHandler =  { [weak self] path in
-            DispatchQueue.main.async {
+        monitor.pathUpdateHandler = { path in
+            Task { @MainActor [weak self] in
                 self?.isConnected = path.status == .satisfied ? true : false
             }
         }
         monitor.start(queue: queue)
+    }
+    
+    deinit {
+        monitor.cancel()
     }
 }

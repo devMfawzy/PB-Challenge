@@ -37,6 +37,7 @@
 		504141F12BD9E5D300E1DDFF /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141F02BD9E5D300E1DDFF /* UserDefault.swift */; };
 		504141F42BDAA3CD00E1DDFF /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504141F32BDAA3CD00E1DDFF /* ConnectionErrorView.swift */; };
 		50E23CC02BE29A8600E7011D /* UserSettingsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E23CBF2BE29A8600E7011D /* UserSettingsMock.swift */; };
+		5B7C12342BF0223D00F4B3AB /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C12332BF0223D00F4B3AB /* RoundedButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		504141F02BD9E5D300E1DDFF /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		504141F32BDAA3CD00E1DDFF /* ConnectionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
 		50E23CBF2BE29A8600E7011D /* UserSettingsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsMock.swift; sourceTree = "<group>"; };
+		5B7C12332BF0223D00F4B3AB /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				501EB9D82BD6C500000F5928 /* MainView.swift */,
+				5B7C12322BF0221700F4B3AB /* Custom */,
 				501EBA1F2BD72467000F5928 /* Transactions */,
 				501EBA202BD7247B000F5928 /* SettingsView */,
 				501EBA432BD81A12000F5928 /* FailureView */,
@@ -274,6 +277,14 @@
 				504141F32BDAA3CD00E1DDFF /* ConnectionErrorView.swift */,
 			);
 			path = ConnectionErrorView;
+			sourceTree = "<group>";
+		};
+		5B7C12322BF0221700F4B3AB /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				5B7C12332BF0223D00F4B3AB /* RoundedButtonStyle.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +401,7 @@
 				501EBA2B2BD73BF7000F5928 /* EnvironmentView.swift in Sources */,
 				504141F12BD9E5D300E1DDFF /* UserDefault.swift in Sources */,
 				501EB9E82BD6E7BB000F5928 /* TransactionItem.swift in Sources */,
+				5B7C12342BF0223D00F4B3AB /* RoundedButtonStyle.swift in Sources */,
 				501EB9F02BD6F02C000F5928 /* NetworkEnvironment.swift in Sources */,
 				504141F42BDAA3CD00E1DDFF /* ConnectionErrorView.swift in Sources */,
 				501EBA342BD743F7000F5928 /* TransactionListViewModel.swift in Sources */,
@@ -568,7 +580,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fawzy.WorldOfPAYBACK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fawzy2.WorldOfPAYBACK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -602,7 +614,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fawzy.WorldOfPAYBACK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fawzy2.WorldOfPAYBACK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -623,7 +635,7 @@
 				DEVELOPMENT_TEAM = F7RWFZ45WK;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fawzy.WorldOfPAYBACKTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fawzy2.WorldOfPAYBACKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -641,7 +653,7 @@
 				DEVELOPMENT_TEAM = F7RWFZ45WK;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fawzy.WorldOfPAYBACKTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fawzy2.WorldOfPAYBACKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
